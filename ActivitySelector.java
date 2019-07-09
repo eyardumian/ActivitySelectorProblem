@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
 /**
  * Programs to solve the Activity Selector problem.
  * 
- * @author Erika Yardumian - CPSC - 3283
+ * @author Erika Yardumian 
  * @version 6/26/19
  */
  
@@ -19,13 +19,11 @@ public class ActivitySelector {
       StudyOverhead(2000, 1000);
    }
     
-
    public static int[] RecursiveActivitySelector(int[] s, int[] f, int k, int n, int[] A) {
       int m = k + 1;
       while (m <= n && s[m] <= f[k]) {
          m++;
       }
-   
       if (m <= n) {
          A[m] = 1;
          RecursiveActivitySelector(s, f, m, n, A);
@@ -39,7 +37,6 @@ public class ActivitySelector {
    public static int[] GreedyActivitySelector(int[] s,int[] f, int n, int[] A) {
       A[0] = 1;
       int k = 1;
-      
       for (int m = 2; m < n; m++) {
          if (s[m] >= f[k]) {
             A[m] = 1;
@@ -49,7 +46,6 @@ public class ActivitySelector {
       return A;
       //System.out.println(A);
    }  
-
    
    public static void StudyOverhead(int NumberPoints, int NumberRuns) {
       File F = new File("Times2.txt");
